@@ -1,0 +1,81 @@
+*{
+
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(86, 166, 192);
+    width: 500px;
+    font-size: 17px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    min-height: 90vh;
+    margin: 15px;
+}
+label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#heading {
+    padding: 1px;
+    margin: 0px;
+}
+
+customer_receip{
+    margin: 30px;
+    border: solid rgb(233, 216, 216);
+    font-size: 25px;
+}
+
+.row {
+    display: grid;
+    padding: 30px;
+    font-size: 16px;
+    background-color: rgb(175, 185, 197);
+    border-radius: 5px;
+    width: 450px;
+    border: solid black;
+    box-shadow: 5px 5px rgb(130, 137, 146);
+}
+
+#row1 {
+    display: grid;
+    padding: 10px;
+    border: none;
+    width: 250px;
+    height: 140px;
+    font-size: 18px;
+
+}
+
+receipt p{
+    font-size: 25px;
+}
+
+.usercart{
+    display: grid;
+    width: 230px;
+    height: 400px;
+    border: none;
+}
+
+#receipt{
+    display: flexbox;
+    background-color: rgb(124, 113, 91);
+    width: 290px;
+    padding: 2px 10px;
+    border: solid black;
+    
+}
+#submited{
+    font-size: 20px;
+    display: grid;
+    background-color: rgb(124, 113, 91);
+    width: 240px;
+    padding: 5px;
+    text-align: center;
+    border: solid black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 3px;
+    
+}
