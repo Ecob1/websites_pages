@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>markmfg</title>      
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="content">    
+    <header class="header">
+      <div class="logo-box">
+        <img  src="https://cdn.glitch.com/7e42080a-d195-4b92-9ad5-b4643816a237%2Fmark_mfg.png?v=1622941160211"  alt="logo picture"/>
+      </div>    
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bits_&_spurs.html">Bits & Spurs</a></li>
+        <li><a href="profile.html">Profile</a></li>  
+      </ul>  
+    </nav>
+    </header>
+    <main>
+      <div class= "home-grid">
+        <div class="profile"><p>Mark Dahl lives and works in the same place where he was raised: at the foot of the majestic Ruby Mountains in rural, northeastern Nevada. He grew up as a cowboy, working on his father's ranch, as well as others in the area.
+            In 1982, he founded Mark Mfg. and began life as a silversmith. He started making custom, silver-mounted bits and spurs. As a self-taught artist, Mark worked hard to master his craft. Soon his name became recognized among collectors and working cowboys alike — all of whom appreciate the sturdy functionality as well as inherent beauty of his work.
+        </p></div>
+        <div class="contact-information">
+          <div>
+            <p>
+              <strong>Contact us</strong><br><br>  For more information please contact us below       
+            </p>              
+          </div>
+
+        </div>
+        <form class="feedback-form" action="/my-handling-form-page" method="POST">
+          <div>
+            <div>
+                <label for="name">First Name:</label>
+                <div><input type="text" id="name" name="user_name"></div>
+            </div>     
+            <div>
+                  <label for="mail">Adress:</label>
+                  <div><input type="text" id="adresses" name="adress"></div>
+            </div>             
+            <div>
+              <label for="mail">Phone Number:</label>
+              <div><input type="number" id="phone" name="phone_number"></div>
+            </div>
+            <div>
+              <label for="msg">Message:</label>
+              <div><textarea id="msg" name="user_message"></textarea></div>
+            </div>
+          </div>
+
+          <div class="feedback-right">
+            <div id="second-form">
+                <div>
+              <label for="mail">Last Name:</label>
+              <div><input type="text" id="lastname" name="last_name"></div>
+            </div>
+                <div>
+                  <label for="mail">E-mail:</label>
+                  <div><input type="email" id="mail" name="user_email"></div>
+                </div>
+              <br>
+              <div>
+                <div><button type="submit">Send message</button></div>
+              </div> 
+            </div>  
+          </div>
+        </form>
+        <script>
+            // get the feedback div element so we can do something with it.
+            const feedbackElement = document.getElementById('feedback');
+            // get the form so we can read what was entered in it.
+            const formElement = document.forms[0];
+            // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+            formElement.addEventListener('submit', function(e) {
+                // stop the form from doing the default action
+                e.preventDefault();
+                // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+                feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+                // make the feedback element visible.
+                feedbackElement.style.display = "block";
+                // add a class to move everything down so our message doesn't cover it.
+                document.body.classList.toggle('moveDown');
+            });
+          </script>      
+          <img class="profile-picture" src="https://cdn.glitch.com/7e42080a-d195-4b92-9ad5-b4643816a237%2Fwebpage_profile.JPG?v=1623908526560" alt="image profile">
+     </div>
+  </main>
+  
+    <footer>
+        <p>&copy; 2021 Edgar Cobian</p>  
+        <p>
+          <a href="https://edgar-cobianwebpage-b-wdd130-07.glitch.me/site-plan.html">Site plan</a>
+          </p>
+      </footer>  
+  </div>
+  </body>
+</html>
