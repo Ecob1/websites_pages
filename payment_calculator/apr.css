@@ -1,0 +1,44 @@
+*{
+
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.header{
+    font-size: 50px;
+    text-align: center;
+}
+
+.row {
+    display: grid;
+    padding: 40px;
+}
+
+.loanclc{
+    margin: 50px;
+    display: grid;
+    border: none;
+    width: 700px;
+    height: 370px;
+    font-size: 20px;
+
+}
+
+.loanclc{
+    padding: 20px;
+}
+.loanclc input{
+    margin-left: 4em;
+}
+
+.loanclc label{
+    position: absolute;
+}
+
+.checkboxes{
+    margin: 1px;
+    padding: 0px;
+}

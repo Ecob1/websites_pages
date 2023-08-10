@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="apr.css">
+    <title>Loan Calculator</title>
+    <div class="header">Payment Calculator</div>
+    <script>
+        function loanclc() {
+            
+            var apr = parseFloat(document.getElementById('apr').value);
+            var term = parseFloat(document.getElementById('term').value);
+            var amount = parseFloat(document.getElementById('amount').value);
+            var computingPayments = computingApr(apr, term, amount);
+           
+            document.getElementById('outputAPR').innerHTML = "$" + computingPayments;
+
+
+            if (apr >= 0 || apr <= 25) {
+                document.getElementById("aprmsg").innerHTML = "You APR needs to be between 0 and 25%";
+                
+
+            }
+            if(apr < 0 || apr < 25){
+                document.getElementById("aprmsg").style.visibility = "hidden";
+                
+            }
+            if (term != 0 || term > 40) {
+                document.getElementById("termmsg").innerHTML = "Your loan term must be 0 to 40 years ";
+                
+            }
+            if (term >= 0 && term <= 40){
+                document.getElementById("termmsg").style.visibility = "hidden";
+            }
+
+            if (amount <= 0) {
+                document.getElementById("amountmsg").innerHTML =  "Please enter a positve number";
+                
+            }
+
+            if(amount > 0){
+                document.getElementById("amountmsg").style.visibility = "hidden";
+            }
+
+
+
+           function computingApr(apr, term, amount) {
+                term*=12;
+                let r = (apr / 12) * .01;
+                let power = Math.pow((1 + r), term);
+                let pay = amount * ((r * power) / (power - 1));
+                return pay.toFixed(2);
+            }
+
+            document.getElementById("apr").placeholder = "Please fill this box"
+            document.getElementById("term").placeholder = "Please fill this box"
+            document.getElementById("amount").placeholder = "Please fill this box"
+
+ 
+        }
+
+       
+
+    </script>
+     
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+            <div class="loanclc">
+                <form >
+                    APR %      <input type = "number" placeholder="" name="default"  id = "apr"  required=""> <div id="aprmsg"></div>
+                    <br>
+                    <br>
+                    Loan Term   <input type = "number" placeholder="" id = "term" required=""><div id="termmsg"></div>
+                    <br>
+                    <br>
+                    Loan Amount <input type = "number" placeholder="" id = "amount" required=""><div id="amountmsg"></div>
+                    <br>
+                    <br>
+                    <button type="button" onclick="loanclc()" id="calculate">Calculate</button>
+                    <input style="text-align: center;" type="reset" value="Reset" id="clear">
+                    <h2>Monthly Payment</h2>
+                    <div id="outputAPR"></div>
+                </form>
+            </div>  
+        </div>
+    </div>
+</head>
+</body>
+</html>
